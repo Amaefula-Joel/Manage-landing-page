@@ -1,0 +1,75 @@
+@import '../sass/mixin';
+@import '../sass/variables';
+
+.btn {
+    font-size: $verySmallText;
+    background-color: $BrightRed;
+    color: white;
+    border-radius: $borderRadius;
+    padding: 1.4rem 3rem;
+    display: inline-block;
+    transition: .3s;
+    font-weight: 700;
+
+    &.white{
+        color: $BrightRed;
+        background-color: white;
+    }
+    &.shadow{
+        box-shadow: 0 .7rem 1.3rem #f25f3a9c;
+    }
+    
+    &.link{
+        &:hover{
+            filter: opacity(.7);
+        }
+    }
+}
+
+.container-max-width {
+    max-width: 122rem;
+    margin: auto;
+}
+
+
+.container {
+    padding: 0 2.5rem;
+}
+
+.section-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include desktop {
+        & {
+            padding-top: 3.6rem;
+            padding-bottom: 3.6rem;
+        }
+    }
+}
+
+
+.short-width-text {
+    max-width: 33rem;
+    width: 100%;
+
+    @include phoneOnly{
+        &{
+            margin: auto;
+        }
+    }
+}
+
+.text-align-sm{
+    text-align: center;
+
+    @include desktop{
+        &{
+            text-align: left;
+        }
+    }
+}
+
+.text-align-center{
+    text-align: center;
+}

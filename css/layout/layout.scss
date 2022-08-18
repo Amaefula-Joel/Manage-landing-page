@@ -1,0 +1,121 @@
+@import '../sass/mixin';
+@import '../sass/variables';
+
+.d-flex {
+    display: flex;
+
+    &.flex-sm {
+        @include phoneOnly {
+            & {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-direction {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-basis-half {
+    @include desktop {
+        & {
+            flex-basis: 47%;
+        }
+    }
+}
+
+
+/* positioning */
+.p-relative {
+    position: relative;
+}
+
+
+/* grid on feature layut  */
+.d-grid-feature {
+    @include grid(min-content auto, auto auto);
+    align-items: center;
+    gap: 1.5rem;
+
+    b {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    h3 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    p {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    @include desktop {
+        & {
+            gap: 1.5rem 2rem;
+
+            p {
+                grid-column: 2;
+            }
+        }
+    }
+}
+
+
+.footer-grid {
+    display: grid;
+    gap: 3.4rem 2rem;
+    justify-content: space-evenly;
+    grid-template-areas: 'form form'
+        'link1 link2'
+        'icons icons'
+        'logo logo'
+        'copyright copyright ';
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .social-icons {
+        grid-area: icons;
+    }
+
+    .link1 {
+        grid-area: link1;
+    }
+
+    .link2 {
+        grid-area: link2;
+    }
+
+    form {
+        grid-area: form;
+    }
+
+    .copyright {
+        grid-area: copyright;
+    }
+
+    @include desktop {
+        & {
+            grid-template-areas: 'logo link1 link2 form'
+                'icons link1 link2 copyright';
+            justify-content: space-between;
+        }
+    }
+}

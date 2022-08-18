@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import 'sass/mixin';
+@import 'sass/variables';
+@import 'general/general';
+@import 'widjet/utilities';
+@import 'layout/layout';
+
+body {
+    background: url(../images/bg-tablet-pattern.svg) calc(100% + 6rem) calc(0% - 13rem) no-repeat, url(../images/bg-tablet-pattern.svg)  172% 18% no-repeat;
+    background-size: 50rem;
+
+    @include desktop {
+        & {
+            background: url(../images/bg-tablet-pattern.svg) calc(100% + 6rem) calc(0% - 13rem) no-repeat, url(../images/bg-tablet-pattern.svg) -37rem 54% no-repeat;
+            background-size: 70rem;
+        }
+    }
+}
+
+
+.navbar {
+    padding: 1.4rem 0;
+
+    .nav-shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* height: calc(100vh - 100%); */
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgb(127 127 127 / 5%), #00000082);
+        z-index: 10;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .logo {
+        z-index: 50;
+
+        img {
+            height: 1.8rem;
+        }
+    }
+
+    .navlink-container {
+        gap: 2.4rem;
+        z-index: 50;
+
+        a {
+            font-size: $smallText;
+        }
+
+
+        @include phoneOnly {
+            & {
+                position: absolute;
+                top: calc(100% + 2rem);
+                width: calc(100% - 4rem);
+                max-height: calc(100vh - 100% - 4rem);
+                left: 2rem;
+                background-color: white;
+                padding: 3.3rem 0;
+                /* transform: scaleY(0); */
+                display: none;
+                overflow: auto;
+
+                a {
+                    font-weight: 700;
+                    color: black;
+                    display: block;
+                    text-align: center;
+                    margin-bottom: 2.4rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+            & {
+                a {
+                    color: $VeryDarkBlue;
+
+                    &:hover {
+                        color: $DarkGrayishBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-invite {
+        @include phoneOnly {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    .menu-btn {
+        border: none;
+        background-color: transparent;
+        font-size: 2.3rem;
+        cursor: pointer;
+        z-index: 55;
+
+        @include desktop {
+            & {
+                display: none;
+            }
+        }
+
+        &.close:before {
+            content: "\f00d" !important;
+        }
+    }
+
+    @include desktop {
+        & {
+            padding: 3rem 0;
+        }
+    }
+}
+
+header {
+    .illustration {
+        img {
+            width: 100%;
+            min-height: 25rem;
+            object-fit: contain;
+        }
+    }
+
+    .header-content {
+        text-align: center;
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+        }
+
+        p {
+            font-size: $smallText;
+            margin-bottom: 2.5rem;
+        }
+
+        @include phoneOnly {
+            & {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    @include desktop {
+
+        .illustration {
+            order: 2;
+        }
+
+        .header-content {
+            order: 1;
+            text-align: left;
+            padding: 4rem 0;
+
+            h1 {
+                font-size: 5rem;
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+}
+
+#features {
+    overflow-x: hidden;
+
+    div {
+        .intro {
+            margin-bottom: 4rem;
+
+            h2 {
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: $verySmallText;
+            }
+        }
+
+        .feature {
+            margin-bottom: 3.3rem;
+
+            b {
+                position: relative;
+
+                @include phoneOnly {
+                    &::after {
+                        content: '';
+                        height: 100%;
+                        width: 100vw;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-color: $VeryPaleRed;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            h3 {
+                vertical-align: middle;
+            }
+
+            p {
+                font-size: $verySmallText;
+            }
+        }
+    }
+}
+
+#testimonial {
+    h2 {
+        margin-bottom: 3rem;
+    }
+
+    #testimonial-container {
+        margin-bottom: 3rem;
+
+        .slide {
+            background-color: $VeryLightGray;
+            text-align: center;
+            padding: 5rem 2rem 4rem;
+            position: relative;
+            /* margin-top: 3rem;
+            margin-bottom: 2rem; */
+            margin: 3rem 1.3rem 0rem;
+
+            img {
+                height: 6rem;
+                width: 6rem;
+                position: absolute;
+                top: -3rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            h4 {
+                margin-bottom: 1.6rem;
+            }
+
+            p {
+                font-size: $verySmallText;
+            }
+        }
+
+        &.owl-theme .owl-dots {
+            @include desktop {
+                & {
+                    display: none;
+                }
+            }
+        }
+
+        &.owl-theme .owl-dots .owl-dot span {
+            border: .1rem solid $BrightRed;
+            background-color: white;
+            margin-right: .3rem;
+            margin-left: .3rem;
+            /* width: 12px;
+            height: 12px; */
+        }
+
+        &.owl-theme .owl-dots .owl-dot.active span {
+            background: $BrightRed  !important;
+        }
+    }
+}
+
+.simplify {
+    background-color: $BrightRed;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-image: url(../images/bg-simplify-section-mobile.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+
+    p {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    @include desktop {
+        & {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-image: url(../images/bg-simplify-section-desktop.svg);
+            background-position: center;
+        }
+
+        p {
+            text-align: left;
+            margin-bottom: 0rem;
+        }
+    }
+}
+
+footer {
+    color: white;
+    background-color: $VeryDarkBlue;
+
+    a {
+        font-weight: 400;
+        transition: .3s;
+    }
+
+    .logo {
+        text-align: center;
+
+        img {
+            filter: invert(1) hue-rotate(195deg) brightness(1.2);
+            height: 2.1rem;
+        }
+    }
+
+    .social-icons {
+        gap: 1.4rem;
+
+        a {
+            color: white;
+            font-size: 2.8rem;
+
+            &:hover {
+                color: $BrightRed;
+            }
+        }
+    }
+
+    .footer-link {
+        padding-left: 3rem;
+
+        a {
+            color: #ccc;
+            display: block;
+            margin-bottom: 1.5rem;
+            transition: .3s;
+
+            &:hover {
+                color: $BrightRed
+            }
+        }
+    }
+
+    form {
+        justify-self: center;
+
+        input {
+            border: none;
+        }
+
+        input:first-child {
+            @extend .btn;
+            @extend .white;
+            font-weight: 500;
+            margin-right: .7rem;
+            margin-bottom: .7rem;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+
+    @include desktop {
+        .footer-link {
+            padding-left: 0;
+        }
+
+        .copyright {
+            text-align: right;
+        }
+    }
+}

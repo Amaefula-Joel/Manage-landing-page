@@ -1,0 +1,68 @@
+/* Color */
+/* Pimary */
+/* Neutral */
+/* Typography */
+/* others */
+.btn {
+  font-size: 1.4rem;
+  background-color: #f25f3a;
+  color: white;
+  border-radius: 2.1rem;
+  padding: 1.4rem 3rem;
+  display: inline-block;
+  transition: 0.3s;
+  font-weight: 700;
+}
+.btn.white {
+  color: #f25f3a;
+  background-color: white;
+}
+.btn.shadow {
+  box-shadow: 0 0.7rem 1.3rem rgba(242, 95, 58, 0.6117647059);
+}
+.btn.link:hover {
+  filter: opacity(0.7);
+}
+
+.container-max-width {
+  max-width: 122rem;
+  margin: auto;
+}
+
+.container {
+  padding: 0 2.5rem;
+}
+
+.section-container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .section-container {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+}
+
+.short-width-text {
+  max-width: 33rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .short-width-text {
+    margin: auto;
+  }
+}
+
+.text-align-sm {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .text-align-sm {
+    text-align: left;
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}/*# sourceMappingURL=utilities.css.map */

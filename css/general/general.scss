@@ -1,0 +1,49 @@
+@import '../sass/mixin';
+@import '../sass/variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+html {
+    font-size: 60%;
+
+    @include phoneOnly {
+        font-size: 62%;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.3;
+    color: $DarkBlue
+}
+
+h2 {
+    font-size: $bigText;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: $verySmallText;
+}
+
+p {
+    line-height: 1.4;
+    color: $DarkGrayishBlue;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    font-size: $smallText;
+    text-transform: capitalize;
+}
